@@ -1,7 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
 module.exports = {
@@ -69,6 +69,8 @@ module.exports = {
          // both options are optional
          filename: "main.css"
       }),
-      new CleanWebpackPlugin(['dist']),
+      new CleanWebpackPlugin({
+         cleanAfterEveryBuildPatterns: ['dist']
+      })
    ]
 }; 
