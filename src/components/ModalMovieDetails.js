@@ -1,5 +1,5 @@
 import React from 'react';
-import Aux from '../hoc/Aux';
+import Aux from '../hoc/';
 import AddIcon from '../static/images/add.svg';
 import PlayIcon from '../static/images/play-button.svg';
 
