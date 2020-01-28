@@ -26,7 +26,7 @@ class Layout extends Component {
 
     axios.get(url)
       .then(res => {
-        const results = res.data.results;
+        const results = res.data.videos;
         let movieImageUrl;
         /** Will hold all our movies Components */
         let movieRows = [];
