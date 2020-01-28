@@ -5,11 +5,10 @@ export function getMovieRows(movies, url) {
   const movieRow = movies.map((movie) => {
     let movieImageUrl =  movie.embed_url;
     if (url === "/searchByKeyWord/clara%20morgane") {
-      movieImageUrl = movie.embed_url;
-      console.log(movieImageUrl);
+      movieImageUrl = movie.video.embed_url;
     }
 
-    if (movie.poster_path && movie.backdrop_path !== null) {
+    if ( movie.video.embed_url!== null) {
       const movieComponent = <MovieGenre
         key={movie.video_id}
         url={url}
