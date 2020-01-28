@@ -18,7 +18,7 @@ export default class MovieGenre extends Component {
 
    render() {
       let netflixUrl = false;
-      if (this.props.url === "/discover/tv?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_networks=213") {
+      if (this.props.url === "/searchByKeyWord/clara%20morgane") {
          netflixUrl = true;
       }
 
@@ -26,7 +26,7 @@ export default class MovieGenre extends Component {
          <>
             <div onClick={() => this.handleToggleModal()}
                className={"movieShowcase__container--movie" + (netflixUrl ? "__netflix" : "")}>
-               <img src={this.props.posterUrl} className="movieShowcase__container--movie-image" />
+               <iframe src={this.props.posterUrl} className="movieShowcase__container--movie-image" />
             </div>
             <Modal show={this.state.toggleModal} movie={this.props.movie} modalClosed={this.closeModal}>
                <MovieDetails movie={this.props.movie} />

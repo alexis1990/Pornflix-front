@@ -16,8 +16,9 @@ class NetflixOriginals extends Component {
     // Call getMoviesRows function only when we get the data back 
     // from the API through redux 
     if (this.props.movies.data) {
-      const url = '/discover/tv?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_networks=213';
+      const url = '/searchByKeyWord/clara%20morgane';
       movies = getMovieRows(this.props.movies.data, url);
+      console.log(movies)
     }
     return (
       <>
