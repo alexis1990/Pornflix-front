@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-
 import Modal from '../components/UI/Modal';
 import MovieDetails from '../components/Movie/MovieDetails';
+
 
 export default class MovieGenre extends Component {
    state = {
@@ -22,8 +22,10 @@ export default class MovieGenre extends Component {
          netflixUrl = true;
       }
 
+     
       return (
          <>
+       
             <div onClick={() => this.handleToggleModal()}
                className={"movieShowcase__container--movie" + (netflixUrl ? "__netflix" : "")}>
                <iframe src={this.props.posterUrl} className="movieShowcase__container--movie-image" />
