@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavigationItem from '../components/NavigationItem'
 import SearchLogo from '../static/images/search-icon.svg';
 import NetflixLogo from '../static/images/Netflix_Logo_RGB.png';
-
+import { Link } from 'react-router-dom';
 
 class navigation extends Component {
   state = {
@@ -37,12 +37,10 @@ class navigation extends Component {
         <ul className="navigation__container">
           <NavigationItem link="/" exact><img className="navigation__container--logo" src={NetflixLogo} alt="" /></NavigationItem>
         
-          <div className="navigation__container-link pseudo-link">Home</div>
-          <div className="navigation__container-link pseudo-link">TV Shows</div>
-          <div className="navigation__container-link pseudo-link">Movies</div>
-          <div className="navigation__container-link pseudo-link">Recently Added</div>
-          <div className="navigation__container-link pseudo-link">My List</div>
-
+          
+          <Link className="button button-small" to="/test">
+          <div className="navigation__container-link pseudo-link">Home</div> </Link>
+        
 
           <div className="navigation__container--left">
             <SearchLogo className="logo" />

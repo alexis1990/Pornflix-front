@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
 module.exports = {
-
+   
    entry: "./src/index.js",
    output: {
       filename: "bundle.js",
@@ -55,9 +55,13 @@ module.exports = {
          }
       ]
    },
+   devServer: {
+    historyApiFallback: true,
+  },
    node: {
       fs: "empty"
    },
+  
    plugins: [
       new HtmlWebPackPlugin({
          template: "./src/index.html",
