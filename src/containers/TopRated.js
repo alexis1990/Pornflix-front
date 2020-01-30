@@ -1,33 +1,36 @@
-import React, { Component } from 'react'
+import React, { useState, Fragment, useEffect } from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
+import instance from '../axios-movies'
+// import { render } from 'node-sass';
 
-import { fetchTopRated } from '../store/actions/index';
-import { getMovieRows } from '../getMovie';
+function TopRated() {
+  const [videos, setVideos] = useState([]);
 
-class TopRated extends Component {
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await instance(
+        `/searchByKeyWord/`,
+      );
+      setVideos(result.data.videos);
+    };
+    fetchData();
+  }, [])
 
-  componentWillMount() {
-    this.props.fetchTopRated();
-  }
-
-  render() {
-    let movies
-    // Call getMoviesRows function only when we get the data back 
-    // from the API through redux 
-    if (this.props.topRated.data) {
-      const url = "/movie/top_rated?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&language=en-US";
-      movies = getMovieRows(this.props.topRated.data, url);
-    }
-    return (
-      <>
-        <h1 className="movieShowcase__heading">Top Rated</h1>
-        <div className="movieShowcase__container">
-          {movies}
-        </div>
-      </>
-    )
-  }
+  console.log('resssssssss', videos)
+  return (
+    <Fragment>
+      <h1 className="movieShowcase__heading">NETFLIX ORIGINALS</h1>
+      <div className="movieShowcase__movie">
+        {videos.map((video) => <div>
+          <div className={"movieShowcase__movie--card"}>
+            <p className="movieShowcase__container--movie__title">{video.video.title}</p>
+            <iframe src={video.video.embed_url} className="movieShowcase__container--movie-image" />
+          </div>
+        </div>)}
+      </div>
+    </Fragment >
+  )
 }
 
 const mapStateToProps = (state) => {
@@ -38,4 +41,4 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({ fetchTopRated }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TopRated);
+export default TopRated;

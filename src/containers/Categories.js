@@ -28,7 +28,7 @@ function Categories() {
         {categories.map((categorie) => <div>
           <div className={"movieShowcase__container--movie__netflix"}>
             <p className="movieShowcase__container--movie__title">{categorie.category}</p>
-            <iframe src="" className="movieShowcase__container--movie-image" />
+            {/* <iframe src="" className="movieShowcase__container--movie-image" /> */}
           </div>
         </div>)}
       </div>

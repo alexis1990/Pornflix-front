@@ -47,8 +47,9 @@ class MainContent extends Component {
         {/* <Header movie={this.state.selectedMovie} /> */}
         <div className="movieShowcase">
           <Categories />
-          {/* <TrendingMovies />
           <TopRated />
+          {/* <TrendingMovies /> */}
+          {/* <TopRated />
           <ActionMovies />
           <ComedyMovies /> */}
           {/* <HorrorMovies /> */}
