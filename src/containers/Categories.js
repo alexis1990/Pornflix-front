@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from 'react';
+import React, { useState, Fragment, useEffect, Component } from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
 
@@ -7,10 +7,13 @@ import { fetchNetflixOriginals } from '../store/actions/index';
 import instance from '../axios-movies'
 // import { render } from 'node-sass';
 
+const abortController = new AbortController();
+const signal = abortController.signal
+
 function Categories() {
   const [categories, setCategories] = useState([]);
 
-  useEffect(() => {
+  useEffect(() => {signal:signal
     const fetchData = async () => {
       const result = await instance(
         `/categories`,
@@ -19,6 +22,11 @@ function Categories() {
     };
     fetchData();
   }, [])
+
+  return function cleanup(){
+     abortController.abort()
+  }
+
 
   console.log('resssssssss', categories)
   return (
@@ -34,7 +42,11 @@ function Categories() {
       </div>
     </Fragment >
   )
+
+
+
 }
+
 
 // class NetflixOriginals extends Component {
 
