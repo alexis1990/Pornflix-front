@@ -18,7 +18,7 @@ function Categories() {
       setCategories(result.data.categories);
     };
     fetchData();
-  }, [categories])
+  }, [])
   
   return (
     <Fragment>

@@ -29,7 +29,7 @@ function TopRated() {
           <div>
             {console.log('VIDEOOOO', video)}
             <div className={"movieShowcase__container--movie__netflix"}>
-              <p className="movieShowcase__container--movie__title">{video.video.title}</p>
+              {/* <p className="movieShowcase__container--movie__title">{video.video.title}</p> */}
               <iframe src={video.video.embed_url} frameborder="0" allowfullscreen className="movieShowcase__container--movie-image" />
             </div>
           </div>

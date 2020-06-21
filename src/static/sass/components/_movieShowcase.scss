@@ -36,7 +36,7 @@
       }
 
       &:hover &--card{
-         opacity: .3;
+         opacity: 0;
 
          &:hover {
             transform: scale(1.1);
@@ -60,9 +60,8 @@
          width: 98vw;
       }
 
-
       &:hover &--movie {
-         opacity: .3;
+         opacity: 0 z;
 
          &:hover {
             transform: scale(1.5);
@@ -104,7 +103,7 @@
       }
 
       &:hover &--movie__netflix {
-         opacity: .3;
+         opacity: 0.3;
 
          &:hover {
             transform: scale(1.1);
@@ -149,6 +148,7 @@
          }
 
          &__netflix {
+            height: 36rem;
             // min-height: 0;
             // padding-top: 3rem;
             // padding-bottom: 4rem;
@@ -173,4 +173,3 @@
       }
    }
 }
-
