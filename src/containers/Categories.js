@@ -22,7 +22,7 @@ function Categories() {
 
   return (
     <Fragment>
-      <h1 className="movieShowcase__heading">NETFLIX ORIGINALS</h1>
+      <h1 className="movieShowcase__heading">NETFLIX ORIGINAdLS</h1>
       <div className="movieShowcase__container">
         {categories.map((categorie) => <div>
           <div className={"movieShowcase__container--movie__netflix"}>
