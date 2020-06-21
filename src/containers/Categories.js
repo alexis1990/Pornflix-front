@@ -7,13 +7,10 @@ import { fetchNetflixOriginals } from '../store/actions/index';
 import instance from '../axios-movies'
 // import { render } from 'node-sass';
 
-const abortController = new AbortController();
-const signal = abortController.signal
-
 function Categories() {
   const [categories, setCategories] = useState([]);
 
-  useEffect(() => {signal:signal
+  useEffect(() => {
     const fetchData = async () => {
       const result = await instance(
         `/categories`,
@@ -23,12 +20,6 @@ function Categories() {
     fetchData();
   }, [])
 
-  return function cleanup(){
-     abortController.abort()
-  }
-
-
-  console.log('resssssssss', categories)
   return (
     <Fragment>
       <h1 className="movieShowcase__heading">NETFLIX ORIGINALS</h1>
