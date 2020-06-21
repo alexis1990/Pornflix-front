@@ -21,11 +21,7 @@ const dropdownContent = () => (
         <p className="dropdownContent-text">Manage Profiles</p>
 
       </div>
-      <div className="dropdownContent dropdownContent--2">
-        <p className="dropdownContent-textOutside">Account</p>
-        <p className="dropdownContent-textOutside">Help Center</p>
-        <p className="dropdownContent-textOutside">Sign out of Netflix</p>
-      </div>
+ 
     </div>
   </div>
 );

@@ -22,7 +22,7 @@ class Layout extends Component {
 
   /** Make API call as soon as the user starts typing.  */
   makeAipCall = (searchItem) => {
-    const url = `https://api.themoviedb.org/3/search/multi?api_key=9ea839ec7891591994ec0f540b4b199f&language=en-US&include_adult=false&query=${searchItem}`;
+    const url = `http://localhost:8081/searchByKeyWord/${searchItem}`;
 
     axios.get(url)
       .then(res => {
@@ -30,23 +30,26 @@ class Layout extends Component {
         let movieImageUrl;
         /** Will hold all our movies Components */
         let movieRows = [];
-
+       
         /** Loop through all the movies */
         results.forEach((movie) => {
           /** Manually build our image url and set it on the Movie component. */
-          if (movie.poster_path !== null && movie.media_type !== "person") {
-            movieImageUrl = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
+         
+            movieImageUrl =  movie.video.embed_url;
+
+            console.log('result',movie.video.duration);
+
 
             /** Set the movie object to our Movie component */
             const movieComponent = <Movie
               movieDetails={() => this.selectMovieHandler(movie)}
-              key={movie.id}
+              key={movie.video.video_id}
               movieImage={movieImageUrl}
               movie={movie} />
 
             /** Push our movie component to our movieRows array */
             movieRows.push(movieComponent);
-          }
+          
         })
         /** Set our MovieList array to the movieRows array */
         this.setState({ MovieList: movieRows });
@@ -80,14 +83,9 @@ class Layout extends Component {
 
     let url;
     /** Make the appropriate API call to get the details for a single movie or tv show. */
-    if (movie.media_type === "movie") {
-      const movieId = movie.id;
-      url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0`;
-
-    } else if (movie.media_type === "tv") {
-      const tvId = movie.id
-      url = `https://api.themoviedb.org/3/tv/${tvId}?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0`;
-    }
+   
+      const movieId = movie.video.video_id;
+   
 
     axios.get(url)
       .then(res => {

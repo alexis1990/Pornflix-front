@@ -10,13 +10,13 @@ export default function ModalMovieDetails(props) {
     <Aux>
       <div className="modal__container">
         <h1 className="modal__title">
-          {props.movie.title || props.movie.name}
+          {props.movie.video.title || props.movie.name}
         </h1>
         <p className="modal__info">
           <span className="modal__rating">
             Rating: {props.movie.vote_average * 10}%{" "}
           </span>
-          Release date: {props.movie.release_date || props.movie.first_air_date}  Runtime: {props.movie.runtime || props.movie.episode_run_time}m
+          Release date: {props.movie.video.publish_date || props.movie.first_air_date}  Runtime: {props.movie.runtime || props.movie.episode_run_time}m
         </p>
         <p className="modal__episode">
           {props.movie.number_of_episodes ? " Episodes: " + props.movie.number_of_episodes : ""}

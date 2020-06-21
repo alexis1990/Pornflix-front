@@ -22,12 +22,15 @@ function Categories() {
   
   return (
     <Fragment>
+       <br></br>
+       <br></br> 
+       <br></br>  
       <h1 className="movieShowcase__heading">CATEGORIES</h1>
       <div className="movieShowcase__container">
         {categories.map((categorie) => <div>
           <div className={"movieShowcase__container--movie__netflix"}>
             <p className="movieShowcase__container--movie__title">{categorie.category}</p>
-            {/* <iframe src="" className="movieShowcase__container--movie-image" /> */}
+             <iframe src="" className="movieShowcase__container--movie-image" />
           </div>
         </div>)}
       </div>

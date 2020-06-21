@@ -21,7 +21,7 @@ class Documentaries extends Component {
     }
     return (
       <>
-        <h1 className="movieShowcase__heading">Documentaries</h1>
+        <h1 className="movieShowcase__heading"></h1>
         <div className="movieShowcase__container">
           {movies}
         </div>
