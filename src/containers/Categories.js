@@ -15,13 +15,11 @@ function Categories() {
       const result = await instance(
         `/categories`,
       );
-      console.log('TOTOOTO', result)
       setCategories(result.data.categories);
     };
     fetchData();
   }, [categories])
-
-  console.log('categoriescategoriescategoriescategories', categories)
+  
   return (
     <Fragment>
       <h1 className="movieShowcase__heading">CATEGORIES</h1>
