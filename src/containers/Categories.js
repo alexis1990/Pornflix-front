@@ -28,9 +28,8 @@ function Categories() {
       <h1 className="movieShowcase__heading">CATEGORIES</h1>
       <div className="movieShowcase__container">
         {categories.map((categorie) => <div>
-          <div className={"movieShowcase__container--movie__netflix"}>
+          <div className={"movieShowcase__container--movie__netflix categories"}>
             <p className="movieShowcase__container--movie__title">{categorie.category}</p>
-             <iframe src="" className="movieShowcase__container--movie-image" />
           </div>
         </div>)}
       </div>

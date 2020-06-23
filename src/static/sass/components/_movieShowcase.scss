@@ -162,6 +162,14 @@
             background-color: white;
             color: black;
 
+            iframe {
+               width: 100%;
+            }
+
+            &.categories {
+               height: 50px;
+            }
+
             @include responsive(tab_port) {
                height: 42rem;
             }
